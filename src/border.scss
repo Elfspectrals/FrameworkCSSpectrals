@@ -1,0 +1,11 @@
+@mixin B1($color) {
+    border-width: 50px;
+    border-style: solid;
+    border-color: $color;
+}
+
+@mixin B2($color) {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: $color;
+}

@@ -1,3 +1,5 @@
+@use './border.scss';
+
 $colors: (
   "blue": (#0d6efd, #ffffff), 
   "green": (#198754, #ffffff),
@@ -18,6 +20,7 @@ $colors: (
     $pair: map-get($colors, $key);
     color: nth($pair, 2);
     background-color: nth($pair, 1);
+    // Use the border from border.scss
   } @else {
     @warn "La couleur `#{$key}` n'existe pas dans la liste des couleurs.";
   }
