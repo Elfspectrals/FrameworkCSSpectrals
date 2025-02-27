@@ -1,0 +1,17 @@
+{
+  "name": "frameworkcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "sass src/main.scss dist/styles.css",
+    "watch:sass": "sass --watch src/main.scss:dist/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.85.1"
+  }
+}

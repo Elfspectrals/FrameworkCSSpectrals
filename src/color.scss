@@ -1,0 +1,24 @@
+$colors: (
+  "blue": (#0d6efd, #ffffff), 
+  "green": (#198754, #ffffff),
+  "red": (#dc3545, #ffffff),  
+  "yellow": (#ffc107, #000000), 
+  "purple": (#6f42c1, #ffffff),
+  "orange": (#fd7e14, #ffffff),
+  "cyan": (#0dcaf0, #000000), 
+  "teal": (#20c997, #ffffff), 
+  "pink": (#d63384, #ffffff), 
+  "gray": (#6c757d, #ffffff),
+  "white": (#ffffff, #000000),  
+);
+
+// Mixin pour appliquer les couleurs
+@mixin color-primary($key) {
+  @if map-has-key($colors, $key) {
+    $pair: map-get($colors, $key);
+    color: nth($pair, 2);
+    background-color: nth($pair, 1);
+  } @else {
+    @warn "La couleur `#{$key}` n'existe pas dans la liste des couleurs.";
+  }
+}
