@@ -1,27 +1,17 @@
-@use './border.scss';
-
+/* color.scss */
 $colors: (
-  "blue": (#0d6efd, #ffffff), 
-  "green": (#198754, #ffffff),
-  "red": (#dc3545, #ffffff),  
-  "yellow": (#ffc107, #000000), 
-  "purple": (#6f42c1, #ffffff),
-  "orange": (#fd7e14, #ffffff),
-  "cyan": (#0dcaf0, #000000), 
-  "teal": (#20c997, #ffffff), 
-  "pink": (#d63384, #ffffff), 
-  "gray": (#6c757d, #ffffff),
-  "white": (#ffffff, #000000),  
+  primaryBlue: (
+    border: #14B0F3, // Couleur associée à la bordure
+    text:   #91E5FF  // Couleur associée au texte (ou autre)
+  )
 );
 
-// Mixin pour appliquer les couleurs
-@mixin color-primary($key) {
-  @if map-has-key($colors, $key) {
-    $pair: map-get($colors, $key);
-    color: nth($pair, 2);
-    background-color: nth($pair, 1);
-    // Use the border from border.scss
+@function get-color($name, $role) {
+  $colorEnum: map-get($colors, $name);
+  @if $colorEnum {
+    @return map-get($colorEnum, $role);
   } @else {
-    @warn "La couleur `#{$key}` n'existe pas dans la liste des couleurs.";
+    @warn "La couleur `#{$name}` n'existe pas.";
+    @return null;
   }
 }

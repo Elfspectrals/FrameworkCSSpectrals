@@ -1,21 +1,9 @@
-@use '../color.scss' as color;
-@use '../border.scss' as border;
+/* button.scss */
+@use "../border.scss" as border;
 
 .buttonWarning {
-    @include color.color-primary('yellow');
-    $yellow-color: map-get(color.$colors, 'red');
-    @include border.B2(nth($yellow-color, 1));
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-}
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  @include border.primaryButtonBorder('primaryBlue');
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

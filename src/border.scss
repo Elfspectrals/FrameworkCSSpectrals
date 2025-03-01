@@ -1,11 +1,7 @@
-@mixin B1($color) {
-    border-width: 50px;
-    border-style: solid;
-    border-color: $color;
-}
+@use "./color" as color;
 
-@mixin B2($color) {
-    border-radius: 50%;
-    border-style: solid;
-    border-color: $color;
+@mixin primaryButtonBorder($colorName) {
+  $colorEnum: map-get(color.$colors, $colorName);
+    border: 1px solid map-get($colorEnum, border);
+    color: map-get($colorEnum, text);
 }
